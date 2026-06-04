@@ -1,0 +1,37 @@
+https://codereview.qt-project.org/c/qt/qtbase/+/741073
+QDockWidget: Clear saved state in begin / end drag
+
+Saved state was not cleared when a dock widget is dragged.
+This caused an early return in QMainWindowLayout::setGeometry() and
+subsequently in main window children not receiving resize events.
+That is a regression, introduced by
+1047809eb9bda7970a3b3ed889b2dfc2130937b2.
+
+Clear saved state in QDockWidgetPrivate::startDrag() and endDrag().
+
+The behavior can't be autotested, because a gradual resize of the
+main window is prone to flakiness.
+
+Fixes: QTBUG-147209
+Pick-to: 6.12
+Change-Id: I468edf4a5ad5f8cce2a21e0a0652ed685f0c72b9
+--- a/qtbase/src/widgets/widgets/qdockwidget.cpp
++++ b/qtbase/src/widgets/widgets/qdockwidget.cpp
+@@ -782,7 +782,7 @@
+     }
+ 
+     if (state->ctrlDrag)
+-        layout->restore(QInternal::KeepSavedState);
++        layout->restore(QInternal::ClearSavedState);
+ 
+     state->dragging = true;
+ 
+@@ -829,7 +829,7 @@
+                     delete state->widgetItem;
+                     state->widgetItem = nullptr;
+                 }
+-                mwLayout->restore(QInternal::KeepSavedState);
++                mwLayout->restore(QInternal::ClearSavedState);
+                 QDockWidgetLayout *dwLayout = qobject_cast<QDockWidgetLayout*>(layout);
+                 if (!dwLayout->nativeWindowDeco()) {
+                     // get rid of the X11BypassWindowManager window flag and activate the resizer
