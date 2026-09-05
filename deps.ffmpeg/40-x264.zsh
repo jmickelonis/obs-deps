@@ -7,7 +7,7 @@ local -A versions=(
   linux r3222
   windows r3222
 )
-local url='https://github.com/mirror/x264.git'
+local url='https://code.videolan.org/videolan/x264.git'
 local -A hashes=(
   macos b35605ace3ddf7c1a5d67a2eb553f034aef41d55
   linux b35605ace3ddf7c1a5d67a2eb553f034aef41d55
