@@ -5,14 +5,6 @@ param(
     [string] $Hash = "${PSScriptRoot}/checksums",
     [array] $Targets = @('x64', 'arm64'),
     [array] $Patches = @(
-        @{
-            PatchFile = "${PSScriptRoot}/patches/Qt6/win/0001-QTBUG-147209.patch"
-            HashSum = "E893B3C7CFDF75262117145FD9B28BE35712B0976690F5BFF9D3A5897DC11C84"
-        },
-        @{
-            PatchFile = "${PSScriptRoot}/patches/Qt6/win/0002-QTBUG-146665.patch"
-            HashSum = "461D06DFF5AAB49816693EF301639626C142CAEDFB63332F4F756471899BFCE7"
-        }
     )
 )
 
