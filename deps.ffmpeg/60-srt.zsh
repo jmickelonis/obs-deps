@@ -7,7 +7,7 @@ local url='https://github.com/Haivision/srt/archive/v1.5.7.tar.gz'
 local hash="${0:a:h}/checksums/v1.5.7.tar.gz.sha256"
 local -a patches=(
   "* ${0:a:h}/patches/srt/0001-enable-proper-cmake-build-types.patch \
-    d762ed8c4ce36f98329a5b7e1fcc10d67b38f23d100e1ed66da5d64c970e8a56"
+    6cd8be578d053f51663af5781b30b47c170280807e537ede380afffbdd485c3c"
 )
 
 ## Dependency Overrides
