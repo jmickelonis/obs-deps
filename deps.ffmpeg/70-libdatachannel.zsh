@@ -2,9 +2,9 @@ autoload -Uz log_debug log_error log_info log_status log_output
 
 ## Dependency Information
 local name='libdatachannel'
-local version='v0.24.2'
+local version='v0.24.5'
 local url='https://github.com/paullouisageneau/libdatachannel.git'
-local hash='4e4f4892dccb2a57fe3a490d0c9d958de4244e74'
+local hash='443f6934d9007eb7076ab7825ba330f355fcbead'
 
 ## Dependency Overrides
 local -i shared_libs=1
