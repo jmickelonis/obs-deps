@@ -1,8 +1,8 @@
 param(
     [string] $Name = 'libtheora',
-    [string] $Version = '1.1.1',
-    [string] $Uri = 'https://ftp.osuosl.org/pub/xiph/releases/theora/libtheora-1.1.1.zip',
-    [string] $Hash = "${PSScriptRoot}/checksums/libtheora-1.1.1.zip.sha256",
+    [string] $Version = '1.2.0',
+    [string] $Uri = 'https://github.com/xiph/theora.git',
+    [string] $Hash = '8e4808736e9c181b971306cc3f05df9e61354004',
     [array] $Targets = @('x64', 'arm64'),
     [array] $Patches = @(
         @{
@@ -13,7 +13,7 @@ param(
 )
 
 function Setup {
-    Setup-Dependency -Uri $Uri -Hash $Hash -DestinationPath .
+    Setup-Dependency -Uri $Uri -Hash $Hash -DestinationPath $Path
 }
 
 function Clean {
