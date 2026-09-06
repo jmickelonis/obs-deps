@@ -18,8 +18,6 @@ local -A hashes=(
   windows 8e4808736e9c181b971306cc3f05df9e61354004
 )
 local -a patches=(
-  "macos ${0:a:h}/patches/libtheora/0001-fix-flat-namespace-on-big-sur.patch \
-    83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
 )
 
 ## Dependency Overrides
