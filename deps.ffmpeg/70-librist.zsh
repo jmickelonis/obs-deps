@@ -2,9 +2,17 @@ autoload -Uz log_debug log_error log_info log_status log_output
 
 ## Dependency Information
 local name='librist'
-local version='0.2.20'
+local -A versions=(
+  macos 0.2.7
+  linux 0.2.7
+  windows 0.2.20
+)
 local url='https://code.videolan.org/rist/librist.git'
-local hash='4f45ef8f78983892d52ccd52d9f675435b23738f'
+local -A hashes=(
+  macos 00d1d3e33fb654d4744ce91fa838b413a4408494
+  linux 00d1d3e33fb654d4744ce91fa838b413a4408494
+  windows 4f45ef8f78983892d52ccd52d9f675435b23738f
+)
 local -a patches=(
   "macos ${0:a:h}/patches/librist/0001-generate-cross-compile-files-macos.patch \
     e14ae6f6565c9412c3f99f3917c1e8410181faede1530cbc014d2d5e03f9c124"
