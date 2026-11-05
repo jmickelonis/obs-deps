@@ -6,9 +6,6 @@ local version='13.1.15.0'
 local url='https://github.com/ffmpeg/nv-codec-headers.git'
 local hash='0a6fba9a2820628b8103464f4c8753ee05838baa'
 
-## Dependency Overrides
-local targets=('windows-x*')
-
 ## Build Steps
 setup() {
   log_info "Setup (%F{3}${target}%f)"
