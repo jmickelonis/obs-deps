@@ -1,7 +1,7 @@
 param(
     [string] $Name = 'qt6',
-    [string] $Version = '6.11.2',
-    [string] $Uri = 'https://download.qt.io/archive/qt/6.11/6.11.2',
+    [string] $Version = '6.12.0',
+    [string] $Uri = 'https://download.qt.io/archive/qt/6.12/6.12.0',
     [string] $Hash = "${PSScriptRoot}/checksums",
     [array] $Targets = @('x64', 'arm64'),
     [array] $Patches = @(
